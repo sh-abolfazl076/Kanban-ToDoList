@@ -16,5 +16,16 @@ namespace Kanban_ToDoList
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Shows the CreateTaskForm when the "Create Task" button is clicked.
+        /// </summary>
+        /// <param name="sender">The button that triggered the event.</param>
+        /// <param name="e"> Contains event data.</param>
+        private void btnCreateTask_Click(object sender, EventArgs e)
+        {
+            CreateTaskForm taskForm = new CreateTaskForm();
+            taskForm.ShowDialog();  //Set the form to open centered on the parent window.
+        }// end of btnCreateTask_Click
     }
 }
