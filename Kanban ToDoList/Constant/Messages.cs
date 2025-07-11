@@ -15,6 +15,7 @@ namespace Kanban_ToDoList
         public string Sucess = "Successful";
         public string msUnSucess = "Connection Was Not Successful.";
         public string UnSucess = "Not Successful";
+        public string msUnLoade = "Connection was not loaded";
 
     }
 }

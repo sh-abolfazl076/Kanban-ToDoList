@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kanban_ToDoList.Constant;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,9 +29,16 @@ namespace Kanban_ToDoList
             taskForm.ShowDialog();  //Set the form to open centered on the parent window.
         }// End event btnCreateTask_Click
 
+
+        /// <summary>
+        /// Handles the load event of the MainForm.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
-
-        }
+            LoadTasksPanel panelToDo = new LoadTasksPanel(); // Create an instance .
+            panelToDo.LoadTasksInfoPanal(PanelToDo); // Load task information into the "To Do" panel.
+        }// End Loading
     }
 }

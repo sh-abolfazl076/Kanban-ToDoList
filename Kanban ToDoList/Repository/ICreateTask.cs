@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Kanban_ToDoList
 {
     /// <summary>
-    /// This class defines the rules and logic for the project
+    /// This class defines the rules and logic for the method CreateTask
     /// </summary>
     internal interface ICreateTask
     {
