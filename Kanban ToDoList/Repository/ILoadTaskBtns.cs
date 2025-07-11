@@ -14,6 +14,6 @@ namespace Kanban_ToDoList
     internal interface ILoadTaskBtns
     {
         void CreateBtn(SqlDataReader reader, FlowLayoutPanel PanelToDo);
-        void TaskButton_Click(object sender, EventArgs e);
+
     }
 }

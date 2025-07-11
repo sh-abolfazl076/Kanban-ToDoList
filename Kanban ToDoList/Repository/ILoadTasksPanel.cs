@@ -13,6 +13,6 @@ namespace Kanban_ToDoList
     /// </summary>
     internal interface ILoadTasksPanel
     {
-        void CreateBtn(SqlDataReader reader, FlowLayoutPanel PanelToDo);
+        void LoadTasksInfoPanal(FlowLayoutPanel PanelToDo);
     }
 }

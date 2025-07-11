@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace Kanban_ToDoList.Constant
 {
-    internal class LoadTasksPanel
+    internal class LoadTasksPanel : ILoadTasksPanel
     {
+
+
         Messages massage = new Messages(); // Create an instance massage.
         Query query = new Query(); // Create an instance query.
 
@@ -24,7 +26,7 @@ namespace Kanban_ToDoList.Constant
             SqlConnection connection = new SqlConnection(query.connection); // Create a new SQL connetion 
 
             try
-			{
+            {
                 string queryInsertTask = query.loadToDoQuery + 1; // The query to load tasks where the status is "ToDo" (StageId = 1)
                 SqlCommand cmd = new SqlCommand(queryInsertTask, connection); // Create a SQL command using the query and the database connetion
                 connection.Open();
@@ -32,15 +34,15 @@ namespace Kanban_ToDoList.Constant
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 LoadTaskBtns btns = new LoadTaskBtns(); // Create an instance btns.
-                btns.CreateBtn(reader,PanelToDo); // Call CreateBtn method 
+                btns.CreateBtn(reader, PanelToDo); // Call CreateBtn method 
 
             }
             catch (Exception)
-			{
+            {
                 MessageBox.Show(massage.msUnLoade, massage.UnSucess, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-			finally
-			{
+            finally
+            {
                 connection.Close(); // The database connection should be closed after it is opened
             }
         }// End Method LoadTasksInfoPanal

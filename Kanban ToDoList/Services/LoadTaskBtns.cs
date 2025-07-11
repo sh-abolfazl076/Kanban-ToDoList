@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace Kanban_ToDoList.Services
 {
-    internal class LoadTaskBtns
+    internal class LoadTaskBtns : ILoadTaskBtns
     {
         /// <summary>
         /// Create a button for each row based on its status.
         /// </summary>
         /// <param name="reader"></param>
         /// <param name="PanelToDo"></param>
-        public void CreateBtn(SqlDataReader reader , FlowLayoutPanel PanelToDo)
+        public void CreateBtn(SqlDataReader reader, FlowLayoutPanel PanelToDo)
         {
 
             while (reader.Read()) // While there are rows in the database, create a button 
@@ -32,14 +32,14 @@ namespace Kanban_ToDoList.Services
                 btn.Tag = id;
                 btn.ForeColor = Color.White;
                 btn.BackColor = Color.SteelBlue;
-                btn.Margin = new Padding(5,3,5,1);
+                btn.Margin = new Padding(5, 3, 5, 1);
 
                 btn.Click += TaskButton_Click; // click event handler
 
                 PanelToDo.Controls.Add(btn); // Add the button to the FlowLayoutPanel
             }
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
