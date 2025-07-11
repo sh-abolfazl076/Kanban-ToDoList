@@ -47,7 +47,11 @@ namespace Kanban_ToDoList.Services
         /// <param name="e"></param>
         private void TaskButton_Click(object sender, EventArgs e)
         {
-            // Will be updated later
+            Button btn = sender as Button; // Convert sender to Button
+            int taskId = (int)btn.Tag; // Get task ID from button
+
+            EditTaskForm editForm = new EditTaskForm(taskId); // Open form EditTaskForm
+            editForm.ShowDialog();
         }
 
     }
