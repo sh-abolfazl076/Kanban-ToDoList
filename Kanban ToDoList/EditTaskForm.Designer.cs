@@ -56,10 +56,17 @@
             this.btnEdit.TabIndex = 6;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // comboBoxEdit
             // 
             this.comboBoxEdit.FormattingEnabled = true;
+            this.comboBoxEdit.Items.AddRange(new object[] {
+            "ToDo",
+            "Doing",
+            "Review",
+            "Done",
+            "Cancalled"});
             this.comboBoxEdit.Location = new System.Drawing.Point(6, 250);
             this.comboBoxEdit.Name = "comboBoxEdit";
             this.comboBoxEdit.Size = new System.Drawing.Size(130, 27);

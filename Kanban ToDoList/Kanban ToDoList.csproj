@@ -79,8 +79,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Repository\IEditTask.cs" />
     <Compile Include="Repository\ILoadTaskBtns.cs" />
     <Compile Include="Repository\ILoadTasksPanel.cs" />
+    <Compile Include="Services\EditTask.cs" />
     <Compile Include="Services\LoadTaskBtns.cs" />
     <Compile Include="Services\LoadTasksPanel.cs" />
     <Compile Include="Constant\Messages.cs" />

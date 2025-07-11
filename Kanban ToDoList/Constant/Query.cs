@@ -21,5 +21,6 @@ namespace Kanban_ToDoList.Constant
         public string connection = $"Data Source=.\\{Server};Initial Catalog={DB};User Id={user};Password={pass};TrustServerCertificate=True";
         public string queryInsertTask = "INSERT INTO Tasks (Title, Info, Date, StageId) VALUES (@title, @info, @date, 1)";
         public string loadToDoQuery = "SELECT Id, Title FROM Tasks where StageId =";
+        public string queryUpdateTask = "update tasks set Info =";
     }
 }
