@@ -20,13 +20,14 @@ namespace Kanban_ToDoList.Constant
         /// <summary>
         /// Loads task data from the database where the status is "StageId"
         /// </summary>
-        /// <param name="PanelToDo">The FlowLayoutPanel where task buttons will be added.</param>
-        public void LoadTasksInfoPanal(FlowLayoutPanel PanelToDo , int StageId)
+        /// <param name="Panel">The FlowLayoutPanel where task buttons will be added.</param>
+        public void LoadTasksInfoPanal(FlowLayoutPanel Panel , int StageId)
         {
             SqlConnection connection = new SqlConnection(query.connection); // Create a new SQL connetion 
 
             try
             {
+                Panel.Controls.Clear();
                 string queryInsertTask = query.loadToDoQuery + StageId; // The query to load tasks where the status is "StageId" 
                 SqlCommand cmd = new SqlCommand(queryInsertTask, connection); // Create a SQL command using the query and the database connetion
                 connection.Open();
@@ -34,7 +35,7 @@ namespace Kanban_ToDoList.Constant
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 LoadTaskBtns btns = new LoadTaskBtns(); // Create an instance btns.
-                btns.CreateBtn(reader, PanelToDo); // Call CreateBtn method 
+                btns.CreateBtn(reader, Panel); // Call CreateBtn method 
 
             }
             catch (Exception)

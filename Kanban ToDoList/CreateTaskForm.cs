@@ -15,9 +15,11 @@ namespace Kanban_ToDoList
     public partial class CreateTaskForm : Form
     {
         ICreateTask repotaskform;
-        public CreateTaskForm()
+        private MainForm mainForm;
+        public CreateTaskForm(MainForm mainForm)
         {
             InitializeComponent();
+            this.mainForm = mainForm;
         }
 
         /// <summary>
@@ -42,6 +44,10 @@ namespace Kanban_ToDoList
             // Clear the input 
             txtTitle.Text = "";
             txtInfo.Text = "";
+
+            mainForm?.ReloadTasks(); // Refresh task list in main form
+
+            this.Close(); // Close the form
         }
     }
 }
