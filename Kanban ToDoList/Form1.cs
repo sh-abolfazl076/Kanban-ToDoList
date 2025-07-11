@@ -28,5 +28,9 @@ namespace Kanban_ToDoList
             taskForm.ShowDialog();  //Set the form to open centered on the parent window.
         }// End event btnCreateTask_Click
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
