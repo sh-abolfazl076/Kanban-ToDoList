@@ -18,16 +18,16 @@ namespace Kanban_ToDoList.Constant
         Query query = new Query(); // Create an instance query.
 
         /// <summary>
-        /// Loads task data from the database where the status is "ToDo"
+        /// Loads task data from the database where the status is "StageId"
         /// </summary>
         /// <param name="PanelToDo">The FlowLayoutPanel where task buttons will be added.</param>
-        public void LoadTasksInfoPanal(FlowLayoutPanel PanelToDo)
+        public void LoadTasksInfoPanal(FlowLayoutPanel PanelToDo , int StageId)
         {
             SqlConnection connection = new SqlConnection(query.connection); // Create a new SQL connetion 
 
             try
             {
-                string queryInsertTask = query.loadToDoQuery + 1; // The query to load tasks where the status is "ToDo" (StageId = 1)
+                string queryInsertTask = query.loadToDoQuery + StageId; // The query to load tasks where the status is "StageId" 
                 SqlCommand cmd = new SqlCommand(queryInsertTask, connection); // Create a SQL command using the query and the database connetion
                 connection.Open();
 
@@ -45,7 +45,6 @@ namespace Kanban_ToDoList.Constant
             {
                 connection.Close(); // The database connection should be closed after it is opened
             }
-        }// End Method LoadTasksInfoPanal
-
+        }// End Method LoadTasksInfoPanalToDo
     }
 }

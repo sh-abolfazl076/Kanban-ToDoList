@@ -31,14 +31,26 @@ namespace Kanban_ToDoList
 
 
         /// <summary>
-        /// Handles the load event of the MainForm.
+        /// call Method ReloadTasks
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
-            LoadTasksPanel panelToDo = new LoadTasksPanel(); // Create an instance .
-            panelToDo.LoadTasksInfoPanal(PanelToDo); // Load task information into the "To Do" panel.
+            ReloadTasks();
         }// End Loading
+
+        /// <summary>
+        /// Handles the load event of the MainForm.
+        /// </summary>
+        public void ReloadTasks()
+        {
+            LoadTasksPanel panelToDo = new LoadTasksPanel(); // Create an instance .
+            panelToDo.LoadTasksInfoPanal(PanelToDo,1); // Load task information into the "To Do" panel.
+            panelToDo.LoadTasksInfoPanal(PanelDoing,2); // Load task information into the "PanelDoing" panel.
+            panelToDo.LoadTasksInfoPanal(PanelReview,3); // Load task information into the "PanelDoing" panel.
+            panelToDo.LoadTasksInfoPanal(PanelDone,4); // Load task information into the "PanelDoing" panel.
+            panelToDo.LoadTasksInfoPanal(PanelCanalled,5); // Load task information into the "PanelDoing" panel.
+        }
     }
 }

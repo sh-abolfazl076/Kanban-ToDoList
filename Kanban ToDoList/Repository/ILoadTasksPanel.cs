@@ -13,6 +13,6 @@ namespace Kanban_ToDoList
     /// </summary>
     internal interface ILoadTasksPanel
     {
-        void LoadTasksInfoPanal(FlowLayoutPanel PanelToDo);
+        void LoadTasksInfoPanal(FlowLayoutPanel PanelToDo, int StageId);
     }
 }
