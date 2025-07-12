@@ -18,6 +18,8 @@ namespace Kanban_ToDoList
         public string msUnLoade = "Connection was not loaded";
         public string msSucessEdit = "Update completed successfully";
         public string msErrorcomboBox = "Please select an option.";
+        public string msErroUplodaTitle = "the Upload Title was successful";
+        public string msErroUplodaInfo = "the Upload Descriptions was successful";
 
     }
 }

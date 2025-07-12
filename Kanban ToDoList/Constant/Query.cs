@@ -16,11 +16,14 @@ namespace Kanban_ToDoList.Constant
         const string DB = "ToDoList";
         const string user = "sa";
         const string pass = "arta0@";
+        const string table = "tasks";
 
         // query
         public string connection = $"Data Source=.\\{Server};Initial Catalog={DB};User Id={user};Password={pass};TrustServerCertificate=True";
-        public string queryInsertTask = "INSERT INTO Tasks (Title, Info, Date, StageId) VALUES (@title, @info, @date, 1)";
-        public string loadToDoQuery = "SELECT Id, Title FROM Tasks where StageId =";
-        public string queryUpdateTask = "update tasks set Info =";
+        public string queryInsertTask = $"INSERT INTO {table} (Title, Info, Date, StageId) VALUES (@title, @info, @date, 1)";
+        public string loadToDoQuery = $"SELECT Id, Title FROM {table} where StageId =";
+        public string queryUpdateTask = $"update {table} set Info =";
+        public string uploadTitle = $"select * from {table} where ID=";
+        public string uploadInfo = $"select Info from {table} where ID=";
     }
 }

@@ -22,6 +22,7 @@ namespace Kanban_ToDoList
         {
             InitializeComponent();
             this.taskId = taskId;
+
         }
 
         /// <summary>
@@ -41,6 +42,24 @@ namespace Kanban_ToDoList
             {
                 MessageBox.Show(massage.msErrorcomboBox);
             }
+            //
+
+            this.Close(); // Close the form
+
+        }
+
+        /// <summary>
+        /// Loads title and info of a task when the form opens.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EditTaskForm_Load(object sender, EventArgs e)
+        {
+            UploadTask uploader = new UploadTask();
+            var taskUpload = uploader.Upload(taskId); // Gets task data
+            lblTitle.Text = taskUpload.title; // Set title label
+            lblInfo.Text = taskUpload.info; // Set info label
+
         }
     }
 }

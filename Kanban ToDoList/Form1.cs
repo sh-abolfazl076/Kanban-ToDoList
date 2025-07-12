@@ -45,6 +45,7 @@ namespace Kanban_ToDoList
         /// </summary>
         public void ReloadTasks()
         {
+
             LoadTasksPanel panelToDo = new LoadTasksPanel(); // Create an instance .
             panelToDo.LoadTasksInfoPanal(PanelToDo,1); // Load task information into the "To Do" panel.
             panelToDo.LoadTasksInfoPanal(PanelDoing,2); // Load task information into the "PanelDoing" panel.

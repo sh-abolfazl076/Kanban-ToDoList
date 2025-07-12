@@ -82,6 +82,7 @@
     <Compile Include="Repository\IEditTask.cs" />
     <Compile Include="Repository\ILoadTaskBtns.cs" />
     <Compile Include="Repository\ILoadTasksPanel.cs" />
+    <Compile Include="Repository\IUploadTask.cs" />
     <Compile Include="Services\EditTask.cs" />
     <Compile Include="Services\LoadTaskBtns.cs" />
     <Compile Include="Services\LoadTasksPanel.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="EditTaskForm.Designer.cs">
       <DependentUpon>EditTaskForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\UploadTask.cs" />
     <EmbeddedResource Include="CreateTaskForm.resx">
       <DependentUpon>CreateTaskForm.cs</DependentUpon>
     </EmbeddedResource>

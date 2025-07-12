@@ -34,11 +34,13 @@
             this.comboBoxEdit = new System.Windows.Forms.ComboBox();
             this.txtEdit = new System.Windows.Forms.RichTextBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblInfo);
             this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.comboBoxEdit);
             this.groupBox1.Controls.Add(this.txtEdit);
@@ -74,9 +76,9 @@
             // 
             // txtEdit
             // 
-            this.txtEdit.Location = new System.Drawing.Point(6, 26);
+            this.txtEdit.Location = new System.Drawing.Point(6, 109);
             this.txtEdit.Name = "txtEdit";
-            this.txtEdit.Size = new System.Drawing.Size(273, 218);
+            this.txtEdit.Size = new System.Drawing.Size(273, 135);
             this.txtEdit.TabIndex = 4;
             this.txtEdit.Text = "";
             // 
@@ -90,8 +92,19 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(188, 33);
             this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Title";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblInfo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblInfo.Location = new System.Drawing.Point(6, 15);
+            this.lblInfo.Margin = new System.Windows.Forms.Padding(3, 0, 5, 10);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(271, 81);
+            this.lblInfo.TabIndex = 2;
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // EditTaskForm
             // 
@@ -108,6 +121,7 @@
             this.Name = "EditTaskForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EditTaskForm";
+            this.Load += new System.EventHandler(this.EditTaskForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -116,9 +130,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblTitle;
         public System.Windows.Forms.RichTextBox txtEdit;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.ComboBox comboBoxEdit;
+        public System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.Label lblInfo;
     }
 }
