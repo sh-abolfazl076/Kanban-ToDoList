@@ -89,19 +89,23 @@
             // 
             // btnCreateTask
             // 
+            this.btnCreateTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.btnCreateTask.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreateTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnCreateTask.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCreateTask.Location = new System.Drawing.Point(460, 200);
             this.btnCreateTask.Name = "btnCreateTask";
-            this.btnCreateTask.Size = new System.Drawing.Size(124, 36);
+            this.btnCreateTask.Size = new System.Drawing.Size(124, 50);
             this.btnCreateTask.TabIndex = 2;
             this.btnCreateTask.Text = "Create";
-            this.btnCreateTask.UseVisualStyleBackColor = true;
+            this.btnCreateTask.UseVisualStyleBackColor = false;
             this.btnCreateTask.Click += new System.EventHandler(this.btnCreateTask_Click);
             // 
             // CreateTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(627, 262);
             this.Controls.Add(this.btnCreateTask);
             this.Controls.Add(this.groupBox1);
