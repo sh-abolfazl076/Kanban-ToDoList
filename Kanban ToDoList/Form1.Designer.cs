@@ -48,7 +48,7 @@
             // 
             this.btnCreateTaskForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.btnCreateTaskForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreateTaskForm.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnCreateTaskForm.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnCreateTaskForm.ForeColor = System.Drawing.Color.Snow;
             this.btnCreateTaskForm.Location = new System.Drawing.Point(42, 62);
             this.btnCreateTaskForm.Name = "btnCreateTaskForm";

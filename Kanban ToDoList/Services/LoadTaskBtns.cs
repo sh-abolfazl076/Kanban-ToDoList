@@ -34,6 +34,7 @@ namespace Kanban_ToDoList.Services
                 btn.BackColor = ColorTranslator.FromHtml("#E91E63");
                 btn.Margin = new Padding(5, 3, 5, 1);
                 btn.Cursor = Cursors.Hand;
+                btn.Font = new Font("Tahoma", 12F, FontStyle.Bold);
 
                 btn.Click += TaskButton_Click; // click event handler
 
