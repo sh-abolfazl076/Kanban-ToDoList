@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Kanban_ToDoList
 {
-    internal class UploadTask:IUploadTask
+    internal class UploadTask : IUploadTask
     {
         /// <summary>
         /// This method gets the title and info of a task using taskId,

@@ -9,6 +9,6 @@ namespace Kanban_ToDoList
 {
     internal interface IUploadTask
     {
-        void (string title, string info) Upload(int taskId);
+        (string title, string info) Upload(int taskId);
     }
 }
