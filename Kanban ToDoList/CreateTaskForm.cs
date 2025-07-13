@@ -16,6 +16,7 @@ namespace Kanban_ToDoList
     {
         ICreateTask repotaskform;
         private MainForm mainForm;
+        Messages massage = new Messages();
         public CreateTaskForm(MainForm mainForm)
         {
             InitializeComponent();
@@ -39,15 +40,39 @@ namespace Kanban_ToDoList
 
             // Create and use of the class 
             repotaskform = new CreateTask();
-            repotaskform.CreateTaskBtn(title,info,Date);
+            if (IsValidation())
+            {
+                repotaskform.CreateTaskBtn(title,info,Date);
+                
+                // Clear the input 
+                txtTitle.Text = "";
+                txtInfo.Text = "";
 
-            // Clear the input 
-            txtTitle.Text = "";
-            txtInfo.Text = "";
+                mainForm?.ReloadTasks(); // Refresh task list in main form
 
-            mainForm?.ReloadTasks(); // Refresh task list in main form
+                this.Close(); // Close the form
+            }
+        }
 
-            this.Close(); // Close the form
+        /// <summary>
+        /// Validates the input fields to ensure they are not empty.
+        /// </summary>
+        /// <returns>Returns true if validation passes, otherwise false</returns>
+        private bool IsValidation()
+        {
+            // Check if the title is empty
+            if (string.IsNullOrWhiteSpace(txtTitle.Text))
+            {
+                MessageBox.Show(massage.msIsvalidation+"Title", massage.msValidationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            // Check if the info is empty
+            if (string.IsNullOrWhiteSpace(txtInfo.Text))
+            {
+                MessageBox.Show(massage.msIsvalidation + "Description", massage.msValidationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true; // Validation passed
         }
     }
 }
