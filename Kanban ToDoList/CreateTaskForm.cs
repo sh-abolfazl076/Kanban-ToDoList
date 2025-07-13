@@ -18,6 +18,7 @@ namespace Kanban_ToDoList
         ICreateTask repotaskform;
         private MainForm mainForm;
         Messages massage = new Messages();
+        MessagesLog massageLog = new MessagesLog();
         public CreateTaskForm(MainForm mainForm)
         {
             InitializeComponent();
@@ -32,10 +33,10 @@ namespace Kanban_ToDoList
         /// <param name="e"></param>
         private void btnCreateTask_Click(object sender, EventArgs e)
         {   
-            Log.Information("Click a Create Task");
+            Log.Information(massageLog.msCreateloding);
             try
             {
-                Log.Information("Creating a new task with title and info", txtTitle.Text, txtInfo.Text);
+                Log.Information(massageLog.msCreateTask, txtTitle.Text, txtInfo.Text);
                 string title = txtTitle.Text;
                 string info = txtInfo.Text;
 
@@ -61,7 +62,7 @@ namespace Kanban_ToDoList
             catch (Exception)
             {
 
-                Log.Error("Error creating task with title and info", txtTitle.Text, txtInfo.Text);
+                Log.Error(massageLog.msCreateTaskError, txtTitle.Text, txtInfo.Text);
             }
         }
 

@@ -18,5 +18,8 @@ namespace Kanban_ToDoList
         public string mscreateTask = "Attempting to edit task with ID: ";
         public string msLoadeInfo = "An error occurred while loading tasks.";
         public string UnloaInfo = "Task loading failed";
+        public string msCreateloding = "Click a Create Task";
+        public string msCreateTask = "Creating a new task with title and info :";
+        public string msCreateTaskError = "Error creating task with title and info :";
     }
 }
