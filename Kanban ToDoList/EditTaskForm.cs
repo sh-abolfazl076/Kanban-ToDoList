@@ -16,6 +16,7 @@ namespace Kanban_ToDoList
     public partial class EditTaskForm : Form
     {
         Messages massage = new Messages();
+        MessagesLog massageLog = new MessagesLog();
         EditTask edit = new EditTask();
         private int taskId ;
         private int selectedIndex;
@@ -34,10 +35,10 @@ namespace Kanban_ToDoList
         /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            Log.Information("Edit button clicked for task ID:", taskId);
+            Log.Information(massageLog.msEdit, taskId);
             try
             {
-                Log.Information("Attempting to edit task with ID:", taskId);
+                Log.Information(massageLog.msEditError, taskId);
                 int selectedIndex = comboBoxEdit.SelectedIndex;
 
                 if (IsValidation())
@@ -56,7 +57,7 @@ namespace Kanban_ToDoList
             catch (Exception)
             {
 
-                Log.Error("An error occurred while editing the task with ID:", taskId);             
+                Log.Error(massageLog.mscreateTask, taskId);             
             }
 
         }
@@ -68,10 +69,10 @@ namespace Kanban_ToDoList
         /// <param name="e"></param>
         private void EditTaskForm_Load(object sender, EventArgs e)
         {
-            Log.Information("Loading task details for task ID:", taskId);
+            Log.Information(massageLog.msLoad, taskId);
             try
             {
-                Log.Information("Fetching task details for task ID:", taskId);
+                Log.Information(massageLog.msLoadeInfo, taskId);
                 UploadTask uploader = new UploadTask();
                 var taskUpload = uploader.Upload(taskId); // Gets task data
                 lblTitle.Text = taskUpload.title; // Set title label
@@ -81,7 +82,7 @@ namespace Kanban_ToDoList
             catch (Exception)
             {
 
-                Log.Error("An error occurred while loading task details for task ID:", taskId);
+                Log.Error(massageLog.msLoadeInfo, taskId);
             }
 
         }
