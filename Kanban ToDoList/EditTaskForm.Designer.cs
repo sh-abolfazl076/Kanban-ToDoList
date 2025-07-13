@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditTaskForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.comboBoxEdit = new System.Windows.Forms.ComboBox();
             this.txtEdit = new System.Windows.Forms.RichTextBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lblInfo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,22 +46,37 @@
             this.groupBox1.Controls.Add(this.txtEdit);
             this.groupBox1.Location = new System.Drawing.Point(12, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(285, 295);
+            this.groupBox1.Size = new System.Drawing.Size(285, 305);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // lblInfo
+            // 
+            this.lblInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblInfo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.lblInfo.Location = new System.Drawing.Point(6, 15);
+            this.lblInfo.Margin = new System.Windows.Forms.Padding(3, 0, 5, 10);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(271, 81);
+            this.lblInfo.TabIndex = 2;
+            // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(143, 251);
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.btnEdit.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnEdit.Location = new System.Drawing.Point(143, 246);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(136, 26);
+            this.btnEdit.Size = new System.Drawing.Size(136, 33);
             this.btnEdit.TabIndex = 6;
             this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // comboBoxEdit
             // 
+            this.comboBoxEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.comboBoxEdit.FormattingEnabled = true;
             this.comboBoxEdit.Items.AddRange(new object[] {
             "ToDo",
@@ -76,6 +91,8 @@
             // 
             // txtEdit
             // 
+            this.txtEdit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.txtEdit.Location = new System.Drawing.Point(6, 109);
             this.txtEdit.Name = "txtEdit";
             this.txtEdit.Size = new System.Drawing.Size(273, 135);
@@ -84,33 +101,23 @@
             // 
             // lblTitle
             // 
-            this.lblTitle.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTitle.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblTitle.Location = new System.Drawing.Point(56, 20);
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblTitle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblTitle.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.lblTitle.Location = new System.Drawing.Point(32, 20);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(3, 0, 5, 10);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(188, 33);
+            this.lblTitle.Size = new System.Drawing.Size(247, 33);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblInfo
-            // 
-            this.lblInfo.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblInfo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblInfo.Location = new System.Drawing.Point(6, 15);
-            this.lblInfo.Margin = new System.Windows.Forms.Padding(3, 0, 5, 10);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(271, 81);
-            this.lblInfo.TabIndex = 2;
-            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // EditTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 355);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.ClientSize = new System.Drawing.Size(309, 365);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
