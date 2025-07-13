@@ -51,6 +51,7 @@ namespace Kanban_ToDoList.Services
             int taskId = (int)btn.Tag; // Get task ID from button
 
             EditTaskForm editForm = new EditTaskForm(taskId); // Open form EditTaskForm
+            editForm.Owner = Application.OpenForms["MainForm"]; // Set EditTaskForm as child of MainForm
             editForm.ShowDialog();
         }
 

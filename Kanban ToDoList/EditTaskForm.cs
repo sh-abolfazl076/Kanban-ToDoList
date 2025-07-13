@@ -42,7 +42,12 @@ namespace Kanban_ToDoList
             {
                 MessageBox.Show(massage.msErrorcomboBox);
             }
-            //
+
+            // refresh by calling ReloadTasks.
+            if (this.Owner is MainForm mainForm)
+            {
+                mainForm.ReloadTasks(); 
+            }
 
             this.Close(); // Close the form
 

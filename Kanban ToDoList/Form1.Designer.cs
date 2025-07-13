@@ -31,16 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnCreateTaskForm = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.PanelToDo = new System.Windows.Forms.FlowLayoutPanel();
-            this.PanelDoing = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.PanelReview = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.PanelDone = new System.Windows.Forms.FlowLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
             this.PanelCanalled = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
+            this.PanelDone = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.PanelReview = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.PanelDoing = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PanelToDo = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,68 +73,26 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // PanelCanalled
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label1.Location = new System.Drawing.Point(0, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 5, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ToDo";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PanelCanalled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanelCanalled.Location = new System.Drawing.Point(551, 42);
+            this.PanelCanalled.Name = "PanelCanalled";
+            this.PanelCanalled.Size = new System.Drawing.Size(141, 313);
+            this.PanelCanalled.TabIndex = 12;
             // 
-            // PanelToDo
+            // label5
             // 
-            this.PanelToDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PanelToDo.Location = new System.Drawing.Point(0, 42);
-            this.PanelToDo.Name = "PanelToDo";
-            this.PanelToDo.Size = new System.Drawing.Size(141, 313);
-            this.PanelToDo.TabIndex = 4;
-            // 
-            // PanelDoing
-            // 
-            this.PanelDoing.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PanelDoing.Location = new System.Drawing.Point(137, 42);
-            this.PanelDoing.Name = "PanelDoing";
-            this.PanelDoing.Size = new System.Drawing.Size(141, 313);
-            this.PanelDoing.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.Location = new System.Drawing.Point(137, 9);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 5, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 33);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Doing";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // PanelReview
-            // 
-            this.PanelReview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PanelReview.Location = new System.Drawing.Point(275, 42);
-            this.PanelReview.Name = "PanelReview";
-            this.PanelReview.Size = new System.Drawing.Size(141, 313);
-            this.PanelReview.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label3.Location = new System.Drawing.Point(275, 9);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 0, 5, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 33);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Review";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label5.Location = new System.Drawing.Point(551, 9);
+            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 5, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(141, 33);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Cancalled";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // PanelDone
             // 
@@ -157,26 +115,68 @@
             this.label4.Text = "Done";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // PanelCanalled
+            // PanelReview
             // 
-            this.PanelCanalled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PanelCanalled.Location = new System.Drawing.Point(551, 42);
-            this.PanelCanalled.Name = "PanelCanalled";
-            this.PanelCanalled.Size = new System.Drawing.Size(141, 313);
-            this.PanelCanalled.TabIndex = 12;
+            this.PanelReview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanelReview.Location = new System.Drawing.Point(275, 42);
+            this.PanelReview.Name = "PanelReview";
+            this.PanelReview.Size = new System.Drawing.Size(141, 313);
+            this.PanelReview.TabIndex = 8;
             // 
-            // label5
+            // label3
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.Location = new System.Drawing.Point(551, 9);
-            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 5, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 33);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Cancalled";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label3.Location = new System.Drawing.Point(275, 9);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 0, 5, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 33);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Review";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PanelDoing
+            // 
+            this.PanelDoing.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanelDoing.Location = new System.Drawing.Point(137, 42);
+            this.PanelDoing.Name = "PanelDoing";
+            this.PanelDoing.Size = new System.Drawing.Size(141, 313);
+            this.PanelDoing.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label2.Location = new System.Drawing.Point(137, 9);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 5, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 33);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Doing";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PanelToDo
+            // 
+            this.PanelToDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanelToDo.Location = new System.Drawing.Point(0, 42);
+            this.PanelToDo.Name = "PanelToDo";
+            this.PanelToDo.Size = new System.Drawing.Size(141, 313);
+            this.PanelToDo.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label1.Location = new System.Drawing.Point(0, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 5, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ToDo";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // MainForm
             // 
