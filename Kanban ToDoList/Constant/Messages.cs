@@ -20,6 +20,7 @@ namespace Kanban_ToDoList
         public string msErrorcomboBox = "Please select an option.";
         public string msErroUplodaTitle = "the Upload Title was successful";
         public string msErroUplodaInfo = "the Upload Descriptions was successful";
+        public string msIsvalidation = "Value cannot be empty.";
 
     }
 }

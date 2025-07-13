@@ -17,6 +17,7 @@ namespace Kanban_ToDoList
         Messages massage = new Messages();
         EditTask edit = new EditTask();
         private int taskId ;
+        private int selectedIndex;
 
         public EditTaskForm(int taskId)
         {
@@ -32,24 +33,21 @@ namespace Kanban_ToDoList
         /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            // If a stage is selected, edit the task. Else, show error message.
+            
             int selectedIndex = comboBoxEdit.SelectedIndex;
-            if (selectedIndex >= 0)
-            {
-                edit.EditTaskBtn(taskId ,txtEdit.Text , selectedIndex + 1);
-            }
-            else
-            {
-                MessageBox.Show(massage.msErrorcomboBox);
-            }
 
-            // refresh by calling ReloadTasks.
-            if (this.Owner is MainForm mainForm)
+            if (IsValidation())
             {
-                mainForm.ReloadTasks(); 
-            }
+                edit.EditTaskBtn(taskId ,txtEdit.Text , selectedIndex + 1); // // Add 1 to selectedIndex because the value should not start from zero
 
-            this.Close(); // Close the form
+                // refresh by calling ReloadTasks.
+                if (this.Owner is MainForm mainForm)
+                {
+                    mainForm.ReloadTasks(); 
+                }
+
+                this.Close(); // Close the form
+            }
 
         }
 
@@ -65,6 +63,34 @@ namespace Kanban_ToDoList
             lblTitle.Text = taskUpload.title; // Set title label
             lblInfo.Text = taskUpload.info; // Set info label
 
+        }
+
+        /// <summary>
+        /// This method is for validation.
+        /// </summary>
+        /// <returns>Returns true if validation passes, otherwise false</returns>
+        private bool IsValidation()
+        {
+            int selectedIndex = comboBoxEdit.SelectedIndex;
+            if (!string.IsNullOrWhiteSpace(txtEdit.Text))
+            {
+                
+                // If the validation result is zero, it means no value exists in the selection
+                if (selectedIndex >= 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show(massage.msErrorcomboBox);
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show(massage.msIsvalidation);
+                return false;  
+            }
         }
     }
 }
