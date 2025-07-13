@@ -1,10 +1,12 @@
 ﻿using Kanban_ToDoList.Constant;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,6 +39,7 @@ namespace Kanban_ToDoList
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Log.Information("MainForm loaded successfully.");
             ReloadTasks();
         }// End Loading
 
@@ -45,13 +48,22 @@ namespace Kanban_ToDoList
         /// </summary>
         public void ReloadTasks()
         {
+            try
+            {
+                LoadTasksPanel panelToDo = new LoadTasksPanel(); // Create an instance .
+                panelToDo.LoadTasksInfoPanal(PanelToDo,1); // Load task information into the "To Do" panel.
+                panelToDo.LoadTasksInfoPanal(PanelDoing,2); // Load task information into the "PanelDoing" panel.
+                panelToDo.LoadTasksInfoPanal(PanelReview,3); // Load task information into the "PanelDoing" panel.
+                panelToDo.LoadTasksInfoPanal(PanelDone,4); // Load task information into the "PanelDoing" panel.
+                panelToDo.LoadTasksInfoPanal(PanelCanalled,5); // Load task information into the "PanelDoing" panel.
 
-            LoadTasksPanel panelToDo = new LoadTasksPanel(); // Create an instance .
-            panelToDo.LoadTasksInfoPanal(PanelToDo,1); // Load task information into the "To Do" panel.
-            panelToDo.LoadTasksInfoPanal(PanelDoing,2); // Load task information into the "PanelDoing" panel.
-            panelToDo.LoadTasksInfoPanal(PanelReview,3); // Load task information into the "PanelDoing" panel.
-            panelToDo.LoadTasksInfoPanal(PanelDone,4); // Load task information into the "PanelDoing" panel.
-            panelToDo.LoadTasksInfoPanal(PanelCanalled,5); // Load task information into the "PanelDoing" panel.
+            }
+            catch (Exception ex)
+            {
+
+                Log.Error("An error occurred while reloading tasks:", ex.Message);
+            }
+
         }
     }
 }
