@@ -15,6 +15,7 @@ namespace Kanban_ToDoList
 {
     public partial class MainForm : Form
     {
+        MessagesLog messagesLog = new MessagesLog();
         public MainForm()
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace Kanban_ToDoList
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Log.Information("MainForm loaded successfully.");
+            Log.Information(messagesLog.msLoad);
             ReloadTasks();
         }// End Loading
 
@@ -61,7 +62,7 @@ namespace Kanban_ToDoList
             catch (Exception ex)
             {
 
-                Log.Error("An error occurred while reloading tasks:", ex.Message);
+                Log.Error(messagesLog.msLoadError, ex.Message);
             }
 
         }

@@ -11,5 +11,7 @@ namespace Kanban_ToDoList
     {
         public string msStart = "Application started successfully.";
         public string msError = "An error occurred while starting the application.";
+        public string msLoad = "MainForm loaded successfully.";
+        public string msLoadError = "An error occurred while reloading tasks:";
     }
 }
