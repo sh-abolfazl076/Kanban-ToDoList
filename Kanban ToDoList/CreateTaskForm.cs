@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,27 +31,37 @@ namespace Kanban_ToDoList
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnCreateTask_Click(object sender, EventArgs e)
-        {
-            string title = txtTitle.Text;
-            string info = txtInfo.Text;
-
-            // Get the current date
-            DateTime now = DateTime.Now;
-            string Date = now.ToString("yyyy/MM/dd");
-
-            // Create and use of the class 
-            repotaskform = new CreateTask();
-            if (IsValidation())
+        {   
+            Log.Information("Click a Create Task");
+            try
             {
-                repotaskform.CreateTaskBtn(title,info,Date);
+                Log.Information("Creating a new task with title and info", txtTitle.Text, txtInfo.Text);
+                string title = txtTitle.Text;
+                string info = txtInfo.Text;
+
+                // Get the current date
+                DateTime now = DateTime.Now;
+                string Date = now.ToString("yyyy/MM/dd");
+
+                // Create and use of the class 
+                repotaskform = new CreateTask();
+                if (IsValidation())
+                {
+                    repotaskform.CreateTaskBtn(title,info,Date);
                 
-                // Clear the input 
-                txtTitle.Text = "";
-                txtInfo.Text = "";
+                    // Clear the input 
+                    txtTitle.Text = "";
+                    txtInfo.Text = "";
 
-                mainForm?.ReloadTasks(); // Refresh task list in main form
+                    mainForm?.ReloadTasks(); // Refresh task list in main form
 
-                this.Close(); // Close the form
+                    this.Close(); // Close the form
+                }
+            }
+            catch (Exception)
+            {
+
+                Log.Error("Error creating task with title and info", txtTitle.Text, txtInfo.Text);
             }
         }
 
