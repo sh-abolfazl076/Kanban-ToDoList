@@ -1,4 +1,5 @@
 ﻿using Kanban_ToDoList.Services;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,20 +34,29 @@ namespace Kanban_ToDoList
         /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            
-            int selectedIndex = comboBoxEdit.SelectedIndex;
-
-            if (IsValidation())
+            Log.Information("Edit button clicked for task ID:", taskId);
+            try
             {
-                edit.EditTaskBtn(taskId ,txtEdit.Text , selectedIndex + 1); // // Add 1 to selectedIndex because the value should not start from zero
+                Log.Information("Attempting to edit task with ID:", taskId);
+                int selectedIndex = comboBoxEdit.SelectedIndex;
 
-                // refresh by calling ReloadTasks.
-                if (this.Owner is MainForm mainForm)
+                if (IsValidation())
                 {
-                    mainForm.ReloadTasks(); 
-                }
+                    edit.EditTaskBtn(taskId ,txtEdit.Text , selectedIndex + 1); // // Add 1 to selectedIndex because the value should not start from zero
 
-                this.Close(); // Close the form
+                    // refresh by calling ReloadTasks.
+                    if (this.Owner is MainForm mainForm)
+                    {
+                        mainForm.ReloadTasks(); 
+                    }
+
+                    this.Close(); // Close the form
+                }
+            }
+            catch (Exception)
+            {
+
+                Log.Error("An error occurred while editing the task with ID:", taskId);             
             }
 
         }
@@ -58,10 +68,21 @@ namespace Kanban_ToDoList
         /// <param name="e"></param>
         private void EditTaskForm_Load(object sender, EventArgs e)
         {
-            UploadTask uploader = new UploadTask();
-            var taskUpload = uploader.Upload(taskId); // Gets task data
-            lblTitle.Text = taskUpload.title; // Set title label
-            lblInfo.Text = taskUpload.info; // Set info label
+            Log.Information("Loading task details for task ID:", taskId);
+            try
+            {
+                Log.Information("Fetching task details for task ID:", taskId);
+                UploadTask uploader = new UploadTask();
+                var taskUpload = uploader.Upload(taskId); // Gets task data
+                lblTitle.Text = taskUpload.title; // Set title label
+                lblInfo.Text = taskUpload.info; // Set info label
+
+            }
+            catch (Exception)
+            {
+
+                Log.Error("An error occurred while loading task details for task ID:", taskId);
+            }
 
         }
 
