@@ -46,13 +46,16 @@
             // 
             // btnCreateTaskForm
             // 
+            this.btnCreateTaskForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.btnCreateTaskForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreateTaskForm.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnCreateTaskForm.Location = new System.Drawing.Point(45, 51);
+            this.btnCreateTaskForm.ForeColor = System.Drawing.Color.Snow;
+            this.btnCreateTaskForm.Location = new System.Drawing.Point(42, 62);
             this.btnCreateTaskForm.Name = "btnCreateTaskForm";
-            this.btnCreateTaskForm.Size = new System.Drawing.Size(185, 54);
+            this.btnCreateTaskForm.Size = new System.Drawing.Size(185, 43);
             this.btnCreateTaskForm.TabIndex = 2;
             this.btnCreateTaskForm.Text = "New Task";
-            this.btnCreateTaskForm.UseVisualStyleBackColor = true;
+            this.btnCreateTaskForm.UseVisualStyleBackColor = false;
             this.btnCreateTaskForm.Click += new System.EventHandler(this.btnCreateTask_Click);
             // 
             // groupBox1
@@ -75,6 +78,7 @@
             // 
             // PanelCanalled
             // 
+            this.PanelCanalled.BackColor = System.Drawing.Color.White;
             this.PanelCanalled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelCanalled.Location = new System.Drawing.Point(551, 42);
             this.PanelCanalled.Name = "PanelCanalled";
@@ -96,6 +100,7 @@
             // 
             // PanelDone
             // 
+            this.PanelDone.BackColor = System.Drawing.Color.White;
             this.PanelDone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelDone.Location = new System.Drawing.Point(413, 42);
             this.PanelDone.Name = "PanelDone";
@@ -117,6 +122,7 @@
             // 
             // PanelReview
             // 
+            this.PanelReview.BackColor = System.Drawing.Color.White;
             this.PanelReview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelReview.Location = new System.Drawing.Point(275, 42);
             this.PanelReview.Name = "PanelReview";
@@ -138,6 +144,7 @@
             // 
             // PanelDoing
             // 
+            this.PanelDoing.BackColor = System.Drawing.Color.White;
             this.PanelDoing.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelDoing.Location = new System.Drawing.Point(137, 42);
             this.PanelDoing.Name = "PanelDoing";
@@ -159,6 +166,7 @@
             // 
             // PanelToDo
             // 
+            this.PanelToDo.BackColor = System.Drawing.Color.White;
             this.PanelToDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelToDo.Location = new System.Drawing.Point(0, 42);
             this.PanelToDo.Name = "PanelToDo";
@@ -182,6 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(787, 506);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCreateTaskForm);
