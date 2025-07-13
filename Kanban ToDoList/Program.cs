@@ -1,4 +1,5 @@
-﻿using Serilog;
+﻿using Kanban_ToDoList.Constant;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Kanban_ToDoList
 {
     internal static class Program
     {
+        static MessagesLog messagesLog = new MessagesLog();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -22,7 +24,7 @@ namespace Kanban_ToDoList
                 .CreateLogger();
             try
             {
-                Log.Information("Application started");
+                Log.Information(messagesLog.msStart);
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new MainForm());
@@ -31,7 +33,7 @@ namespace Kanban_ToDoList
             catch (Exception)
             {
 
-                Log.Fatal("An error occurred while starting the application.");
+                Log.Fatal(messagesLog.msError);
             }
             finally
             {

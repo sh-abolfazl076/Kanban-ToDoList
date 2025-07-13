@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constant\MessagesLog.cs" />
     <Compile Include="Repository\IEditTask.cs" />
     <Compile Include="Repository\ILoadTaskBtns.cs" />
     <Compile Include="Repository\ILoadTasksPanel.cs" />
