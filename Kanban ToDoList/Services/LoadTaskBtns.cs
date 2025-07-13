@@ -28,11 +28,12 @@ namespace Kanban_ToDoList.Services
                 Button btn = new Button();
                 btn.Text = title;
                 btn.Width = 125;
-                btn.Height = 40;
+                btn.Height = 45;
                 btn.Tag = id;
                 btn.ForeColor = Color.White;
-                btn.BackColor = Color.SteelBlue;
+                btn.BackColor = ColorTranslator.FromHtml("#E91E63");
                 btn.Margin = new Padding(5, 3, 5, 1);
+                btn.Cursor = Cursors.Hand;
 
                 btn.Click += TaskButton_Click; // click event handler
 
