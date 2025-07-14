@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
@@ -42,7 +43,7 @@ namespace Kanban_ToDoList.Services
 
                 PanelToDo.Controls.Add(btn); // Add the button to the FlowLayoutPanel
             }
-        }
+        } // End CreateBtn
 
         /// <summary>
         /// This method handles the click event for Edit from.
@@ -56,8 +57,8 @@ namespace Kanban_ToDoList.Services
 
             if (btn.Tag is int)
             {
-                EditTaskForm editForm = new EditTaskForm(taskId); // Open form EditTaskForm
-                editForm.Owner = Application.OpenForms["MainForm"]; //
+                EditTaskForm editForm = new EditTaskForm(taskId); 
+                editForm.Owner = Application.OpenForms["MainForm"]; // Make MainForm the owner of editForm
                 editForm.ShowDialog();
 
             }
@@ -66,7 +67,7 @@ namespace Kanban_ToDoList.Services
                 MessageBox.Show(massage.msIsInt, massage.UnSucess, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
+        } // End TaskButton_Click
 
     }
 }
