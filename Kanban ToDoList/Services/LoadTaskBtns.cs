@@ -55,7 +55,7 @@ namespace Kanban_ToDoList.Services
             Button btn = sender as Button; // Convert sender to Button
             int taskId = (int)btn.Tag; // Get task ID from button
 
-            if (btn.Tag is int)
+            if (taskId is int)
             {
                 EditTaskForm editForm = new EditTaskForm(taskId); 
                 editForm.Owner = Application.OpenForms["MainForm"]; // Make MainForm the owner of editForm
