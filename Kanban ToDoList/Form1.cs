@@ -28,13 +28,14 @@ namespace Kanban_ToDoList
         /// <param name="e"> Contains event data.</param>
         private void btnCreateTask_Click(object sender, EventArgs e)
         {
-            CreateTaskForm taskForm = new CreateTaskForm(this);
-            taskForm.ShowDialog();  //Set the form to open centered on the parent window.
+            CreateTaskForm taskForm = new CreateTaskForm(this); // Create new task form and pass this form to use later
+            taskForm.ShowDialog();  
         }// End event btnCreateTask_Click
 
 
         /// <summary>
         /// call Method ReloadTasks
+        /// Add Serilog logging before calling ReloadTasks method
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -42,7 +43,7 @@ namespace Kanban_ToDoList
         {
             Log.Information(messagesLog.msLoad);
             ReloadTasks();
-        }// End Loading
+        }// End MainForm_Load
 
         /// <summary>
         /// Handles the load event of the MainForm.
@@ -51,7 +52,7 @@ namespace Kanban_ToDoList
         {
             try
             {
-                LoadTasksPanel panelToDo = new LoadTasksPanel(); // Create an instance .
+                LoadTasksPanel panelToDo = new LoadTasksPanel(); 
                 panelToDo.LoadTasksInfoPanal(PanelToDo,1); // Load task information into the "To Do" panel.
                 panelToDo.LoadTasksInfoPanal(PanelDoing,2); // Load task information into the "PanelDoing" panel.
                 panelToDo.LoadTasksInfoPanal(PanelReview,3); // Load task information into the "PanelDoing" panel.
@@ -65,6 +66,6 @@ namespace Kanban_ToDoList
                 Log.Error(messagesLog.msLoadError, ex.Message);
             }
 
-        }
+        }// End Method ReloadTasks
     }
 }
