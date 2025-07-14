@@ -38,7 +38,7 @@ namespace Kanban_ToDoList
 
                 cmd.ExecuteNonQuery(); 
 
-                MessageBox.Show(massage.msSucess, massage.Sucess, MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                MessageBox.Show(massage.msSucess, massage.UnSucess, MessageBoxButtons.OK, MessageBoxIcon.Information); 
             }
 			catch
 			{
