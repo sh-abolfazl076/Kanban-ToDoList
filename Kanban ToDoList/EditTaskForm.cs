@@ -74,7 +74,7 @@ namespace Kanban_ToDoList
             {
                 Log.Information(massageLog.msLoadeInfo, taskId);
                 UploadTask uploader = new UploadTask();
-                var taskUpload = uploader.Upload(taskId); // Gets task data
+                (string title , string info) taskUpload = uploader.Upload(taskId); // Gets task data
                 lblTitle.Text = taskUpload.title; // Set title label
                 lblInfo.Text = taskUpload.info; // Set info label
 
