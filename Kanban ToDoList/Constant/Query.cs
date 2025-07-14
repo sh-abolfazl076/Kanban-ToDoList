@@ -12,7 +12,7 @@ namespace Kanban_ToDoList.Constant
     internal class Query
     {
         // Database connection variables
-        const string Server = "Moein2012";
+        const string Server = "Moein2008";
         const string DB = "ToDoList";
         const string user = "sa";
         const string pass = "arta0@";

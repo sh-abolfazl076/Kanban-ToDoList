@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -11,6 +12,7 @@ namespace Kanban_ToDoList.Services
 {
     internal class LoadTaskBtns : ILoadTaskBtns
     {
+        Messages massage = new Messages();
         /// <summary>
         /// Create a button for each row based on its status.
         /// </summary>
@@ -43,7 +45,7 @@ namespace Kanban_ToDoList.Services
         }
 
         /// <summary>
-        /// 
+        /// This method handles the click event for Edit from.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -52,9 +54,18 @@ namespace Kanban_ToDoList.Services
             Button btn = sender as Button; // Convert sender to Button
             int taskId = (int)btn.Tag; // Get task ID from button
 
-            EditTaskForm editForm = new EditTaskForm(taskId); // Open form EditTaskForm
-            editForm.Owner = Application.OpenForms["MainForm"]; // 
-            editForm.ShowDialog();
+            if (btn.Tag is int)
+            {
+                EditTaskForm editForm = new EditTaskForm(taskId); // Open form EditTaskForm
+                editForm.Owner = Application.OpenForms["MainForm"]; //
+                editForm.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("Invalid Task ID", massage.UnSucess, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
     }
