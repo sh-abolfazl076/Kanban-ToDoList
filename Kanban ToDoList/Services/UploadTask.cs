@@ -16,18 +16,18 @@ namespace Kanban_ToDoList
         /// This method gets the title and info of a task using taskId,
         /// and sends (uploads) it to the EditTaskForm.
         /// </summary>
-        /// <param name="taskId"></param>
-        /// <returns>returns title and info</returns>
+        /// <param name="taskId">Receives taskId</param>
+        /// <returns>returns title and info tuple</returns>
         public (string title, string info) Upload(int taskId)
         {
             Messages massage = new Messages();
             Query query = new Query();
-            SqlConnection connection = new SqlConnection(query.connection); // Create a new SQL connetion 
+            SqlConnection connection = new SqlConnection(query.connection);
             try
             {
                 connection.Open();  
                 string queryUploadTitle = query.uploadTitle + taskId; // Upload query task where taskId is true
-                SqlDataAdapter adapter = new SqlDataAdapter(queryUploadTitle, connection); // // Create a SQL command using the query and the database connetion
+                SqlDataAdapter adapter = new SqlDataAdapter(queryUploadTitle, connection); 
                 DataTable date = new DataTable();
                 adapter.Fill(date);
 
@@ -42,7 +42,6 @@ namespace Kanban_ToDoList
             {
                 return (massage.msErroUplodaTitle,massage.msErroUplodaInfo); // return messages Errors
             }
-
 
         }// End method Upload
     }
