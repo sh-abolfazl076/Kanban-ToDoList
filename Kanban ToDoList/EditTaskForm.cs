@@ -102,13 +102,13 @@ namespace Kanban_ToDoList
                 }
                 else
                 {
-                    MessageBox.Show(massage.msErrorcomboBox);
+                    MessageBox.Show(massage.msErrorcomboBox, massage.UnSucess, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show(massage.msIsvalidation);
+                MessageBox.Show(massage.msIsvalidation, massage.UnSucess, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;  
             }
         }
