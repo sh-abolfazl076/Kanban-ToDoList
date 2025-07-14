@@ -23,19 +23,14 @@ namespace Kanban_ToDoList
         {
             Messages massage = new Messages();
             Query query = new Query();
-            SqlConnection connection = new SqlConnection(query.connection); // Create a new SQL connetion 
+            SqlConnection connection = new SqlConnection(query.connection);
 
             try
             {
-
-                string queryUpdateTask = query.queryUpdateTask + "'" + txtEdit + "'" + ", stageID ="+ selectedIndex+ " where ID =" + taskId;  // query to update task title and stage ID based on task ID
-                SqlCommand cmd = new SqlCommand(queryUpdateTask, connection); // Create a SQL command using the query and the database connetion
-
+                string queryUpdateTask = $"{query.queryUpdateTask} '{txtEdit}', stageID = {selectedIndex} where ID = {taskId}";  // query to update task title and stage ID based on task ID
+                SqlCommand cmd = new SqlCommand(queryUpdateTask, connection); 
                 connection.Open();
-
-                // Add parameters to the SQL
-
-                cmd.ExecuteNonQuery(); // Execute the query
+                cmd.ExecuteNonQuery(); 
 
                 MessageBox.Show(massage.msSucessEdit, massage.Sucess, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -49,8 +44,5 @@ namespace Kanban_ToDoList
             }
 
         } // End Method EditTaskBtn
-
-
-
     }
 }
