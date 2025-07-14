@@ -41,7 +41,7 @@ namespace Kanban_ToDoList
                 Log.Information(massageLog.msEditError, taskId);
                 int selectedIndex = comboBoxEdit.SelectedIndex;
 
-                if (IsValidation())
+                if (IsValidation()) // Review of Validation
                 {
                     edit.EditTaskBtn(taskId ,txtEdit.Text , selectedIndex + 1); // // Add 1 to selectedIndex because the value should not start from zero
 
@@ -51,7 +51,7 @@ namespace Kanban_ToDoList
                         mainForm.ReloadTasks(); 
                     }
 
-                    this.Close(); // Close the form
+                    this.Close(); 
                 }
             }
             catch (Exception)
@@ -60,7 +60,7 @@ namespace Kanban_ToDoList
                 Log.Error(massageLog.mscreateTask, taskId);             
             }
 
-        }
+        } // End btnEdit_Click
 
         /// <summary>
         /// Loads title and info of a task when the form opens.
@@ -74,18 +74,16 @@ namespace Kanban_ToDoList
             {
                 Log.Information(massageLog.msLoadeInfo, taskId);
                 UploadTask uploader = new UploadTask();
-                (string title , string info) taskUpload = uploader.Upload(taskId); // Gets task data
-                lblTitle.Text = taskUpload.title; // Set title label
-                lblInfo.Text = taskUpload.info; // Set info label
-
+                (string title , string info) taskUpload = uploader.Upload(taskId); // // Sends taskId and gets a (title, info) tuple
+                lblTitle.Text = taskUpload.title;
+                lblInfo.Text = taskUpload.info; 
             }
             catch (Exception)
             {
-
                 Log.Error(massageLog.msLoadeInfo, taskId);
             }
 
-        }
+        } // End EditTaskForm_Load
 
         /// <summary>
         /// This method is for validation.
