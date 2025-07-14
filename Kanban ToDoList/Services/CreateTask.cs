@@ -21,13 +21,13 @@ namespace Kanban_ToDoList
         {
             Messages massage = new Messages();
             Query query = new Query();
-            SqlConnection connection = new SqlConnection(query.connection); // Create a new SQL connetion 
+            SqlConnection connection = new SqlConnection(query.connection); 
 
 			try
 			{
                 
-                string queryInsertTask = query.queryInsertTask ; // Added query (insert task)
-                SqlCommand cmd = new SqlCommand(queryInsertTask, connection); // Create a SQL command using the query and the database connetion
+                string queryInsertTask = query.queryInsertTask ; // Added query (insert task in sql)
+                SqlCommand cmd = new SqlCommand(queryInsertTask, connection); 
 
                 connection.Open();
 
@@ -36,7 +36,7 @@ namespace Kanban_ToDoList
                 cmd.Parameters.AddWithValue("@info", info);
                 cmd.Parameters.AddWithValue("@date", Date);
 
-                cmd.ExecuteNonQuery(); // Execute the query
+                cmd.ExecuteNonQuery(); 
 
                 MessageBox.Show(massage.msSucess, massage.Sucess, MessageBoxButtons.OK, MessageBoxIcon.Information); 
             }
