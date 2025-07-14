@@ -41,7 +41,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.PanelToDo = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreateTaskForm
@@ -186,6 +188,11 @@
             this.label1.Text = "ToDo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -204,6 +211,7 @@
             this.Text = "Kanban ToDoList";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,6 +230,7 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.FlowLayoutPanel PanelDoing;
         private System.Windows.Forms.Label label2;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }
 
