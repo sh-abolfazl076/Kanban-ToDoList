@@ -63,7 +63,7 @@ namespace Kanban_ToDoList.Services
             }
             else
             {
-                MessageBox.Show("Invalid Task ID", massage.UnSucess, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(massage.msIsInt, massage.UnSucess, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

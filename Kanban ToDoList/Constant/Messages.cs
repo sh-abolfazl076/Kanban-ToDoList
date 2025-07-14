@@ -22,6 +22,7 @@ namespace Kanban_ToDoList
         public string msErroUplodaInfo = "the Upload Descriptions was successful";
         public string msIsvalidation = "Value cannot be empty ";
         public string msValidationError = "Validation Error";
+        public string msIsInt = "Invalid Task ID";
 
     }
 }
